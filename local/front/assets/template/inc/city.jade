@@ -1,0 +1,16 @@
+mixin place(title,sub,tel,adres)
+		.b-city__place.b-place.col-6.col-md-3.col-lg-6
+			.b-place__title= title
+			.b-place__subtitle= sub
+			a(href="tel:{tel}").b-place__phone= tel
+			.b-place__adres= adres
+
+.b-city
+	.b-city__list.row
+		+place('ТЦ sun city','Название шоурума', '+7(966)779-02-07', 'ул. Северная 6' )
+		+place('ТЦ sun city','Название шоурума', '+7(966)779-02-07', 'ул. Северная 6' )
+		+place('ТЦ sun city','Название шоурума', '+7(966)779-02-07', 'ул. Северная 6' )
+		+place('ТЦ sun city','Название шоурума', '+7(966)779-02-07', 'ул. Северная 6' )
+		+place('ТЦ sun city','Название шоурума', '+7(966)779-02-07', 'ул. Северная 6' )
+		+place('ТЦ sun city','Название шоурума', '+7(966)779-02-07', 'ул. Северная 6' )
+

@@ -1,0 +1,11 @@
+mixin breadcrumbs(items)
+	.b-breadcrumbs__wrapper.d-none.d-lg-flex
+		.container.b-breadcrumbs__flexwrap
+			.b-breadcrumbs
+				for item, index in items 
+					if index < items.length-1 
+						a(href="/").b-breadcrumbs__item= item
+						.b-breadcrumbs__seporator /
+					else
+						span.b-breadcrumbs__item= item
+				
