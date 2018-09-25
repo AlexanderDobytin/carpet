@@ -18,7 +18,7 @@ const Sample = (function (items) {
         this.init = (item) => {
             let index = item.data('id');
 
-            index?'':index = 'index'
+            index ? '' : index = 'index'
             item.slick(this.config[index]);
         }
         this.config = {
@@ -354,8 +354,8 @@ const Tabs = (function () {
     }
 })();
 const CitySelector = (function (className) {
-    CityClass = function (item,className,GetList) {
-        this.init = (item,className,GetList)=>{
+    CityClass = function (item, className, GetList) {
+        this.init = (item, className, GetList) => {
             this.root = item;
             this.globalList = GetList();
             this.link = $(this.root).find(className + '__link');
@@ -363,18 +363,18 @@ const CitySelector = (function (className) {
 
             this.state = false;
 
-            this.link.on('click',(e)=>{
+            this.link.on('click', (e) => {
                 this.controller(e);
             });
 
         }
-        this.controller = (e)=>{
-           !this.state ? this.forward(e) : this.back(e);
+        this.controller = (e) => {
+            !this.state ? this.forward(e) : this.back(e);
         }
-        this.forward = (e)=>{
+        this.forward = (e) => {
             e.preventDefault();
             this.link.addClass('active');
-            $(this.globalList).each((i,item)=>{
+            $(this.globalList).each((i, item) => {
                 $(item.root).hide();
             })
             $(this.root).show();
@@ -382,8 +382,8 @@ const CitySelector = (function (className) {
             this.list.addClass('active')
             this.state = true;
         }
-        this.back = ()=>{
-            $(this.globalList).each((i,item)=>{
+        this.back = () => {
+            $(this.globalList).each((i, item) => {
                 $(item.root).show();
             })
             $(this.root).removeClass('active')
@@ -391,56 +391,130 @@ const CitySelector = (function (className) {
             this.list.removeClass('active')
             this.state = false;
         };
-        this.init(item,className,GetList);
+        this.init(item, className, GetList);
     }
-    return{
-        init:function (className) {
-            const GetList = ()=>{
+    return {
+        init: function (className) {
+            const GetList = () => {
                 return this.list;
             }
-            className == undefined? className = '.i-adres':'';
-            $(className).each((index,item)=>{
-                this.list.push(new CityClass(item,className,GetList));
+            className == undefined ? className = '.i-adres' : '';
+            $(className).each((index, item) => {
+                this.list.push(new CityClass(item, className, GetList));
             })
         },
-        list:[]
+        list: []
     }
 })();
-const Map =(function (ymaps) {
-    console.log(ymaps)
-    return{
-        init:function (ymaps) {
-                console.log(ymaps)
-                // Создание карты.
-                var myMap = new ymaps.Map("map", {
+const Map = (function (ymaps) {
 
-                    center: [55.76, 37.64],
-                    // Уровень масштабирования. Допустимые значения:
-                    // от 0 (весь мир) до 19.
-                    zoom: 7,
-                    controls:[]
-                });
+    const MapControll = function (ymaps, map) {
+        this.init = () => {
+            let city;
+            /*если кликаем на город, мутим экшн*/
+            $('.i-adres__link').on('click', (e) => {
+                this.clickToCity(e)
+            })
+        }
+        this.clickToCity = async (e) => {
+            let city = e.target.dataset.cityname;
+            let cityCoord, shopCoord;
+            /*асинхронно идем за кеообъектами магазинов*/
+            await this.getShopCoord(city).then(res => {
+                    shopCoord = res
+            });
+            /* асинхронно идем за координатами города*/
+            await this.getCoord(city).then(res => {
+                cityCoord = res
+            })
+            /*хуячим все это на карту*/
+            this.setCoord(cityCoord, shopCoord);
 
         }
+        this.getCoord = async (item) => {
+            let returnData
+            await ymaps.geocode(item).then(res => {
+                returnData = res.geoObjects.get(0).geometry.getCoordinates();
+            });
+            return returnData;
+        }
+        this.getShopCoord = async (city) => {
+            let ret;
+            coordArray = [];
+            /*тут запрос на сайт*/
+            /*TODO запилить запрос к сайту*/
+            /*в урле урл, который по городу отдает магазы*/
+            // fetch("url", {body: city,method:'post'}).then(res => {
+            //     /*магазины, адреса*/
+            //     ret = res.data;
+            // });
+            /*в рете будет список магазинов*/
+            ret = [" ул. ленина 43", "ул. республики 22"]
+            /*TODO выпилить фэйковый рет*/
+              ret.forEach( async  item=> {
+                  /*идем в яндекс с адресом*/
+                await ymaps.geocode(`${city},${item}`).then(response => {
+                    /*получаем координаты*/
+                    let coord = response.geoObjects.get(0).geometry.getCoordinates()
+                    /*создаем геообъект*/
+                    let geoobj = new ymaps.GeoObject({
+                        geometry: {type: "Point", coordinates: coord
+                },
+                    properties: {
+                        clusterCaption: item
+                    }
+                })
+                    /*пакуем его в массив*/
+                    coordArray.push(geoobj);
+                })
+            })
+            /*отдаем полный массив*/
+            return coordArray;
+        }
+        this.setCoord = (coord,cluster) => {
+            console.log(cluster)
+            map.setCenter(coord, 12);
+            let clusterer = new ymaps.Clusterer();
+            clusterer.add(cluster);
+            map.geoObjects.add(clusterer);
+        }
+
+        this.init();
+
+    }
+
+    return {
+        init: function (ymaps) {
+            // Создание карты.
+            var myMap = new ymaps.Map("map", {
+                center: [55.76, 37.64],
+                zoom: 7,
+                controls: []
+            });
+            new MapControll(ymaps, myMap)
+
+        }
+
     }
 
 })();
-function initMap (ymaps){
 
-    $('#map').length > 0 ? Map.init(ymaps):'';
+function initMap(ymaps) {
+
+    $('#map').length > 0 ? Map.init(ymaps) : '';
 
 }
 
 
 const CatSpoiler = (function () {
     const CatSpoilerClass = function (item) {
-        this.init = (item)=>{
+        this.init = (item) => {
             this.root = $(item);
             this.link = this.root.find('.i-catspoil__link');
             this.list = this.root.find('.i-catspoil__list');
             console.log(this)
             this.state = false;
-            this.link.on('click',(e)=>{
+            this.link.on('click', (e) => {
                 this.controller(e);
             })
         }
@@ -459,14 +533,14 @@ const CatSpoiler = (function () {
         };
         this.init(item);
     }
-    return{
-        init:function () {
-                $('.i-catspoil').each((i,item)=>{
+    return {
+        init: function () {
+            $('.i-catspoil').each((i, item) => {
 
-                    this.list = new CatSpoilerClass(item);
-                })
+                this.list = new CatSpoilerClass(item);
+            })
         },
-        list:[]
+        list: []
     }
 })()
 $(document).ready(function () {

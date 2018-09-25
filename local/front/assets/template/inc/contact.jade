@@ -19,27 +19,27 @@ include breadcrumbs.jade
 							.b-place__adres ул. Саввинская набережная 21, стр.1
 					.b-contact-adres__item(data-id = 'diller').i-tabs__list.row
 						.b-contact-adres__element.b-adres.i-adres.col-12.col-md-3.col-lg-6
-							.b-adres__title.i-adres__link СОЧИ
+							.b-adres__title.i-adres__link(data-cityname='СОЧИ') СОЧИ
 							.b-adres__list.i-adres__list
 								include city.jade
 						.b-contact-adres__element.b-adres.i-adres.col-12.col-md-3.col-lg-6
-							.b-adres__title.i-adres__link ТЮМЕНЬ
+							.b-adres__title.i-adres__link(data-cityname='ТЮМЕНЬ') ТЮМЕНЬ
 							.b-adres__list.i-adres__list
 								include city.jade
 						.b-contact-adres__element.b-adres.i-adres.col-12.col-md-3.col-lg-6
-							.b-adres__title.i-adres__link МОСКВА
+							.b-adres__title.i-adres__link(data-cityname='МОСКВА') МОСКВА
 							.b-adres__list.i-adres__list
 								include city.jade
 						.b-contact-adres__element.b-adres.i-adres.col-12.col-md-3.col-lg-6
-							.b-adres__title.i-adres__link С.-ПЕТЕРБУРГ
+							.b-adres__title.i-adres__link(data-cityname='Санкт-петербург') С.-ПЕТЕРБУРГ
 							.b-adres__list.i-adres__list
 								include city.jade
 						.b-contact-adres__element.b-adres.i-adres.col-12.col-md-3.col-lg-6
-							.b-adres__title.i-adres__link ВЛАДИВОСТОК
+							.b-adres__title.i-adres__link(data-cityname='ВЛАДИВОСТОК') ВЛАДИВОСТОК
 							.b-adres__list.i-adres__list
 								include city.jade
 						.b-contact-adres__element.b-adres.i-adres.col-12.col-md-3.col-lg-6
-							.b-adres__title.i-adres__link НОВОСИБИРСК
+							.b-adres__title.i-adres__link(data-cityname='НОВОСИБИРСК') НОВОСИБИРСК
 							.b-adres__list.i-adres__list
 								include city.jade
 			.b-contact-item__map.col-12.col-lg-8
@@ -62,7 +62,7 @@ include breadcrumbs.jade
 							path(fill-rule="evenodd", clip-rule="evenodd", d="M12.3201 18.224C14.5267 17.0797 16.7138 15.945 18.9226 14.7999C16.7074 13.6441 14.5206 12.504 12.3201 11.3557V18.224Z", fill="#808080")
 
 	.b-contact-form
-		h2.b-contact-form__title Пасскажите нам о свем проекте
+		h2.b-contact-form__title Расскажите нам о своем проекте
 		form.b-contact-form__form.row
 			.b-contact-form__line.col-12.col-sm-6
 				input(type="text" name='name' placeholder="Имя").b-contact-form__input
