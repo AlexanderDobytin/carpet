@@ -12,7 +12,7 @@
 }
 @font-face {
   font-family: 'Circe';
-  src: url('../fonts/Circe/Circe-bold.otf') format('opentype');
+  src: url('../fonts/Circe/Circe-Bold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
 }
@@ -247,6 +247,13 @@ body {
   border-bottom: 1px solid #000000;
   align-items: center;
 }
+.b-navbar__item:hover {
+  background: #c4c4c4 ;
+  box-shadow: -2px 1px 0 1px #c4c4c4;
+}
+.b-navbar__item:hover .b-navbar__link {
+  color: #000;
+}
 .b-navbar__item:active,
 .b-navbar__item.show {
   box-shadow: -2px 1px 0 1px #c38817;
@@ -278,9 +285,8 @@ body {
 .b-navbar__item:hover .b-navbar__link {
   text-decoration: none;
   text-shadow: 0 0 0 1px #000000;
-  color: #000;
+  color: #fff;
 }
-.b-navbar__link:active,
 .b-navbar__item.show .b-navbar__link,
 .b-navbar__item:active .b-navbar__link {
   text-decoration: none;
@@ -300,6 +306,10 @@ body {
   content: '';
   display: block;
   z-index: 9999999;
+}
+.b-navbar__item:hover:after {
+  background: #c4c4c4;
+  opacity: 0;
 }
 .b-navbar__link:active:after,
 .b-navbar__item.show .b-navbar__link:after,
@@ -376,6 +386,8 @@ body {
   text-decoration: none;
   text-shadow: 0 0 0 1px #000000;
   color: #000;
+  color: #fff;
+  background: #c4c4c4;
 }
 .b-navbar-list__link:active {
   text-decoration: none;

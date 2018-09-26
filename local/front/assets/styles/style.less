@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: 'Circe';
-  src: url('../fonts/Circe/Circe-bold.otf') format('opentype');
+  src: url('../fonts/Circe/Circe-Bold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
 }
@@ -210,12 +210,17 @@ body {
     border-bottom: 1px solid #000000;
     align-items: center;
   }
+  &__item:hover{background: #c4c4c4 ;box-shadow: -2px 1px 0 1px #c4c4c4;}
+  &__item:hover &__link{
+    color: #000
+  }
   &__item:active, &__item.show {
     box-shadow: -2px 1px 0 1px #c38817;
   }
   &__item:active:after, &__item.show:after {
     opacity: 0;
   }
+
   &__item:after {
     transition: .3s;
   }
@@ -239,14 +244,15 @@ body {
   &__link:hover, &__item:hover &__link {
     text-decoration: none;
     text-shadow: 0 0 0 1px rgba(0, 0, 0, 1);
-    color: #000;
+    color: #fff;
   }
-  &__link:active, &__item.show &__link, &__item:active &__link {
+  &__item.show &__link, &__item:active &__link {
     text-decoration: none;
     //  font-weight: 400;
     background: #C38817;
     color: #fff;
   }
+
   &__link:after {
     width: 100%;
     height: 1px;
@@ -260,6 +266,10 @@ body {
     content: '';
     display: block;
     z-index: 9999999;
+  }
+  &__item:hover:after{
+    background: #c4c4c4;
+    opacity: 0;
   }
   &__link:active:after, &__item.show &__link:after, &__item:active &__link:after {
     opacity: 1;
@@ -342,6 +352,8 @@ body {
     text-decoration: none;
     text-shadow: 0 0 0 1px rgba(0, 0, 0, 1);
     color: #000;
+    color: #fff;
+    background: #c4c4c4;
   }
   &__link:active {
     text-decoration: none;

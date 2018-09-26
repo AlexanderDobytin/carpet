@@ -97,12 +97,12 @@ const Sample = (function (items) {
         }
         this.init(item)
     }
-    return (
-        this.init = (items) => {
-            new SampleConstructor(items);
-        }
-    );
-    this.init(items);
+    return {
+        init: function(items) {
+        new SampleConstructor(items);
+    }
+};
+
 })();
 
 
@@ -354,7 +354,7 @@ const Tabs = (function () {
     }
 })();
 const CitySelector = (function (className) {
-    CityClass = function (item, className, GetList) {
+    const CityClass = function (item, className, GetList) {
         this.init = (item, className, GetList) => {
             this.root = item;
             this.globalList = GetList();
@@ -558,7 +558,7 @@ $(document).ready(function () {
     /*menu*/
     Menu.init();
     /*Галерейка образцов*/
-    Sample($('.i-sample__list'));
+    Sample.init($('.i-sample__list'));
 
 })
 
