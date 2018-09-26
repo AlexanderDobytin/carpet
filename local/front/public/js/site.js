@@ -98,10 +98,10 @@ const Sample = (function (items) {
         this.init(item)
     }
     return {
-        init: function(items) {
-        new SampleConstructor(items);
-    }
-};
+        init: function (items) {
+            new SampleConstructor(items);
+        }
+    };
 
 })();
 
@@ -241,7 +241,7 @@ const Menu = (function () {
             });
             this.searchBlock = new SearchInHeader();
             this.fixed = new Fixed();
-            console.log(this);
+
 
         }
     }
@@ -293,7 +293,7 @@ const ItemSlider = (
         return {
             init: function () {
                 this.init = new setSlider();
-                console.log(this);
+
             }
         }
     }
@@ -421,7 +421,7 @@ const Map = (function (ymaps) {
             let cityCoord, shopCoord;
             /*асинхронно идем за кеообъектами магазинов*/
             await this.getShopCoord(city).then(res => {
-                    shopCoord = res
+                shopCoord = res
             });
             /* асинхронно идем за координатами города*/
             await this.getCoord(city).then(res => {
@@ -451,19 +451,20 @@ const Map = (function (ymaps) {
             /*в рете будет список магазинов*/
             ret = [" ул. ленина 43", "ул. республики 22"]
             /*TODO выпилить фэйковый рет*/
-              ret.forEach( async  item=> {
-                  /*идем в яндекс с адресом*/
+            ret.forEach(async item => {
+                /*идем в яндекс с адресом*/
                 await ymaps.geocode(`${city},${item}`).then(response => {
                     /*получаем координаты*/
                     let coord = response.geoObjects.get(0).geometry.getCoordinates()
                     /*создаем геообъект*/
                     let geoobj = new ymaps.GeoObject({
-                        geometry: {type: "Point", coordinates: coord
-                },
-                    properties: {
-                        clusterCaption: item
-                    }
-                })
+                        geometry: {
+                            type: "Point", coordinates: coord
+                        },
+                        properties: {
+                            clusterCaption: item
+                        }
+                    })
                     /*пакуем его в массив*/
                     coordArray.push(geoobj);
                 })
@@ -471,8 +472,8 @@ const Map = (function (ymaps) {
             /*отдаем полный массив*/
             return coordArray;
         }
-        this.setCoord = (coord,cluster) => {
-            console.log(cluster)
+        this.setCoord = (coord, cluster) => {
+
             map.setCenter(coord, 12);
             let clusterer = new ymaps.Clusterer();
             clusterer.add(cluster);
@@ -512,7 +513,7 @@ const CatSpoiler = (function () {
             this.root = $(item);
             this.link = this.root.find('.i-catspoil__link');
             this.list = this.root.find('.i-catspoil__list');
-            console.log(this)
+
             this.state = false;
             this.link.on('click', (e) => {
                 this.controller(e);

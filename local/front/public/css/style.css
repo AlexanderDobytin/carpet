@@ -215,7 +215,7 @@ body {
   position: fixed;
   top: 0px;
   background-color: #fff;
-  z-index: 999999;
+  z-index: 9999;
 }
 .b-header-logo__pix {
   width: 180px;
@@ -248,7 +248,7 @@ body {
   align-items: center;
 }
 .b-navbar__item:hover {
-  background: #c4c4c4 ;
+  background: #c4c4c4;
   box-shadow: -2px 1px 0 1px #c4c4c4;
 }
 .b-navbar__item:hover .b-navbar__link {
@@ -1090,6 +1090,24 @@ body {
 .b-sample-item__pixwrap:active:after {
   opacity: 0.25;
 }
+.b-sample-item__pixwrap {
+  overflow: hidden;
+}
+.b-sample-item__link {
+  position: absolute;
+  text-align: center;
+  padding: 20px;
+  bottom: 0px;
+  transition: .3s;
+  left: 0px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  color: #fff;
+  transform: translateY(100%);
+}
+.b-sample-item__pixwrap:hover .b-sample-item__link {
+  transform: translateY(0%);
+}
 .b-sample-item__collect {
   color: #000;
   outline: none;
@@ -1140,9 +1158,11 @@ body {
   font-size: 16px;
   color: #000;
   text-decoration: none;
+  transition: .3s;
 }
 .b-footer__link:hover {
-  color: #c4c4c4;
+  color: #000;
+  text-shadow: 0 0 1px #000;
   text-decoration: none;
 }
 .b-footer__line {
@@ -1174,7 +1194,7 @@ body {
   background-color: #000;
 }
 .b-footer-faq__item:hover:before {
-  background-color: #c4c4c4;
+  background-color: #000;
 }
 .b-footer-faq__item:active:before {
   background-color: #c4c4c4;
@@ -1286,7 +1306,7 @@ body {
     margin-right: -20px;
   }
   .b-footer-partners__item {
-    margin: 0 20px 20px;
+    margin: 0 15px 20px;
   }
   .b-sample-item__pix {
     min-height: 280px;

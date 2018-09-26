@@ -170,7 +170,7 @@ body {
     position: fixed;
     top: 0px;
     background-color: #fff;
-    z-index: 999999;
+    z-index: 9999;
   }
 }
 
@@ -210,8 +210,11 @@ body {
     border-bottom: 1px solid #000000;
     align-items: center;
   }
-  &__item:hover{background: #c4c4c4 ;box-shadow: -2px 1px 0 1px #c4c4c4;}
-  &__item:hover &__link{
+  &__item:hover {
+    background: #c4c4c4;
+    box-shadow: -2px 1px 0 1px #c4c4c4;
+  }
+  &__item:hover &__link {
     color: #000
   }
   &__item:active, &__item.show {
@@ -267,7 +270,7 @@ body {
     display: block;
     z-index: 9999999;
   }
-  &__item:hover:after{
+  &__item:hover:after {
     background: #c4c4c4;
     opacity: 0;
   }
@@ -1164,7 +1167,24 @@ body {
   &__pixwrap:active:after {
     opacity: .25
   }
-;
+  &__pixwrap {
+    overflow: hidden;
+  }
+  &__link {
+    position: absolute;
+    text-align: center;
+    padding: 20px;
+    bottom: 0px;
+    transition: .3s;
+    left: 0px;
+    width: 100%;
+    background: rgba(0, 0, 0, .25);
+    color: #fff;
+    transform: translateY(100%);
+  }
+  &__pixwrap:hover &__link {
+    transform: translateY(0%);
+  }
   & {
     padding: 0 10px;
   }
@@ -1224,10 +1244,13 @@ body {
   &__link {
     font-size: 16px;
     color: #000;
+
     text-decoration: none;
+    transition: .3s;
   }
   &__link:hover {
-    color: #c4c4c4;
+    color: #000;
+    text-shadow: 0 0 1px #000;
     text-decoration: none;
   }
 
@@ -1261,7 +1284,8 @@ body {
 
   }
   &__item:hover:before {
-    background-color: #c4c4c4;
+    background-color: #000;
+
   }
   &__item:active:before {
     background-color: #c4c4c4;
@@ -1408,7 +1432,7 @@ body {
       margin-right: -20px;
     }
     &__item {
-      margin: 0 20px 20px
+      margin: 0 15px 20px
     }
   }
 
@@ -2110,7 +2134,7 @@ body {
     cursor: pointer;
     transition: .3s;
   }
-  &__title:active{
+  &__title:active {
     color: #c38817;
   }
   &__list {
@@ -2135,9 +2159,12 @@ body {
     transition: .3s;
     text-decoration: none;
   }
-  &__phone:hover{color:#c4c4c4}
-  &__phone:active{
-    color: #c38817;}
+  &__phone:hover {
+    color: #c4c4c4
+  }
+  &__phone:active {
+    color: #c38817;
+  }
 }
 
 .b-contact-item {
@@ -2240,8 +2267,9 @@ body {
   &__input {
     display: none;
   }
-  &__name{
-    cursor: pointer;}
+  &__name {
+    cursor: pointer;
+  }
   &__label {
     cursor: pointer;
     width: 30px;
