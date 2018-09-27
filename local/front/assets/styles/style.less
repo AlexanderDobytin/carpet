@@ -108,6 +108,10 @@ body {
 }
 
 .b-header {
+  & {
+    position: relative;
+    z-index: 9999;
+  }
   &__topline {
     background: url('../images/header-bg.jpg') no-repeat 50% / cover;
     padding: 20px;
@@ -1043,6 +1047,12 @@ body {
   }
 }
 
+.b-genslider {
+  &__item {
+    max-width: 100%;
+  }
+}
+
 .b-sample {
   & {
     padding-bottom: 20px;
@@ -1218,6 +1228,9 @@ body {
   &__wrapper {
     background: url('../images/footer-bg-pattern.png') 50%;
     margin-top: 10px;
+    position: relative;
+    z-index: 999;
+    background-color: #fff;
   }
   & {
 
@@ -1457,15 +1470,29 @@ body {
   }
 }
 
-.b-breadcrumbs {
+.b-page .container {
+  background: #fff;
+  position: relative;
+  z-index: 2;
+}
 
+.b-breadcrumbs {
+  &__wrapper {
+
+    background: #fff;
+    z-index: 2;
+    position: relative;
+  }
   display: flex;
   padding-top: 5px;
   padding-right: 20px;
   border-bottom: 1px solid #000;
   &__flexwrap {
     display: flex;
-    background-color: #fff;
+
+    background: #fff;
+    z-index: 2;
+
     margin-bottom: 30px;
     position: relative
   }
@@ -1967,13 +1994,16 @@ body {
 }
 
 .b-item {
+
   &__wrapper {
     background-color: #fff;
     position: relative;
+    z-index: 1;
     padding-top: 40px
   }
   &__item {
     margin-bottom: 20px;
+    background-color: #fff;
   }
   &__title {
 
@@ -1989,7 +2019,8 @@ body {
     z-index: 9999999;
   }
   &-p__bg {
-    position: absolute;
+    position: fixed;
+    z-index: 0;
     left: 50%;
     top: 1px;
     height: 100%;
