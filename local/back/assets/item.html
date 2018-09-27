@@ -6,9 +6,9 @@
     <title>Union</title>
     <link rel="stylesheet" href="css/vendor/vendor.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <!--link(rel="stylesheet", type="text/css", href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css")-->
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <script type="text/javascript" src="js/vendor/vendor.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="text/javascript" src="js/site.js"></script>
   </head>
   <body>
@@ -87,7 +87,7 @@
                   <div class="b-breadcrumbs__seporator">/</div><span class="b-breadcrumbs__item">Rufolo</span>
                 </div>
               </div>
-            </div>
+            </div><img src="images/bborder.png" class="b-item-p__bg d-none d-lg-block">
       <div class="container">
         <div class="b-item row">
           <div class="col-12 col-lg-7">
@@ -125,7 +125,7 @@
               <div class="col-12 b-item__item">
                 <div class="b-subslider i-topslider__controlls row">
                   <div class="col-4 col-sm-3 col-md-2">
-                    <div class="b-subslider__item i-topslider__cont">
+                    <div class="b-subslider__item i-topslider__cont active">
                       <div class="b-subslider__pixwrap"><img src="images/slider-1.png" class="b-subslider__pix"></div>
                       <div class="b-subslider__title">Raven</div>
                     </div>
@@ -196,7 +196,7 @@
                       <path d="M1 21L11 11L1 1.00001" stroke="black" stroke-width="0.5"></path>
                     </svg>
                   </div>
-                  <div class="b-item-link__img"><img src="images/itemlink.png" class="b-item-link__pix"></div>
+                  <div class="b-item-link__img"><a data-fancybox href="images/itemlink.png"><img src="images/itemlink.png" class="b-item-link__pix"></a></div>
                 </div>
               </div>
               <div class="col-12 col-md-6">
@@ -206,7 +206,7 @@
                       <path d="M1 21L11 11L1 1.00001" stroke="black" stroke-width="0.5"></path>
                     </svg>
                   </div>
-                  <div class="b-item-link__img"><img src="images/itemlink.png" class="b-item-link__pix"></div>
+                  <div class="b-item-link__img"><a data-fancybox href="images/itemlink.png"><img src="images/itemlink.png" class="b-item-link__pix"></a></div>
                 </div>
               </div>
             </div>
@@ -218,42 +218,50 @@
         <div class="b-sample i-sample">
           <h2>Образцы недели</h2>
           <div class="b-sample__list i-sample__list">
-            <div class="b-sample-item"><a href="/item.html" class="b-sample-item__pixwrap"><img src="images/sample-1.png" class="b-sample-item__pix"></a>
+            <div class="b-sample-item"><a href="/item.html" class="b-sample-item__pixwrap">
+                <div class="b-sample-item__link">Просмотр</div><img src="images/sample-1.png" class="b-sample-item__pix"></a>
               <div class="b-sample-item__text"><a href="/item.html" class="b-sample-item__collect">Art Deco</a>
                 <div class="b-sample-item__name">Ice Blue</div>
               </div>
             </div>
-            <div class="b-sample-item"><a href="/item.html" class="b-sample-item__pixwrap"><img src="images/sample-1.png" class="b-sample-item__pix"></a>
+            <div class="b-sample-item"><a href="/item.html" class="b-sample-item__pixwrap">
+                <div class="b-sample-item__link">Просмотр</div><img src="images/sample-1.png" class="b-sample-item__pix"></a>
               <div class="b-sample-item__text"><a href="/item.html" class="b-sample-item__collect">Brightwater</a>
                 <div class="b-sample-item__name">Dsert</div>
               </div>
             </div>
-            <div class="b-sample-item"><a href="/item.html" class="b-sample-item__pixwrap"><img src="images/sample-1.png" class="b-sample-item__pix"></a>
+            <div class="b-sample-item"><a href="/item.html" class="b-sample-item__pixwrap">
+                <div class="b-sample-item__link">Просмотр</div><img src="images/sample-1.png" class="b-sample-item__pix"></a>
               <div class="b-sample-item__text"><a href="/item.html" class="b-sample-item__collect">Art Deco</a>
                 <div class="b-sample-item__name">Ice Blue</div>
               </div>
             </div>
-            <div class="b-sample-item"><a href="/item.html" class="b-sample-item__pixwrap"><img src="images/sample-1.png" class="b-sample-item__pix"></a>
+            <div class="b-sample-item"><a href="/item.html" class="b-sample-item__pixwrap">
+                <div class="b-sample-item__link">Просмотр</div><img src="images/sample-1.png" class="b-sample-item__pix"></a>
               <div class="b-sample-item__text"><a href="/item.html" class="b-sample-item__collect">Brightwater</a>
                 <div class="b-sample-item__name">Dsert</div>
               </div>
             </div>
-            <div class="b-sample-item"><a href="/item.html" class="b-sample-item__pixwrap"><img src="images/sample-1.png" class="b-sample-item__pix"></a>
+            <div class="b-sample-item"><a href="/item.html" class="b-sample-item__pixwrap">
+                <div class="b-sample-item__link">Просмотр</div><img src="images/sample-1.png" class="b-sample-item__pix"></a>
               <div class="b-sample-item__text"><a href="/item.html" class="b-sample-item__collect">Art Deco</a>
                 <div class="b-sample-item__name">Ice Blue</div>
               </div>
             </div>
-            <div class="b-sample-item"><a href="/item.html" class="b-sample-item__pixwrap"><img src="images/sample-1.png" class="b-sample-item__pix"></a>
+            <div class="b-sample-item"><a href="/item.html" class="b-sample-item__pixwrap">
+                <div class="b-sample-item__link">Просмотр</div><img src="images/sample-1.png" class="b-sample-item__pix"></a>
               <div class="b-sample-item__text"><a href="/item.html" class="b-sample-item__collect">Brightwater</a>
                 <div class="b-sample-item__name">Dsert</div>
               </div>
             </div>
-            <div class="b-sample-item"><a href="/item.html" class="b-sample-item__pixwrap"><img src="images/sample-1.png" class="b-sample-item__pix"></a>
+            <div class="b-sample-item"><a href="/item.html" class="b-sample-item__pixwrap">
+                <div class="b-sample-item__link">Просмотр</div><img src="images/sample-1.png" class="b-sample-item__pix"></a>
               <div class="b-sample-item__text"><a href="/item.html" class="b-sample-item__collect">Art Deco</a>
                 <div class="b-sample-item__name">Ice Blue</div>
               </div>
             </div>
-            <div class="b-sample-item"><a href="/item.html" class="b-sample-item__pixwrap"><img src="images/sample-1.png" class="b-sample-item__pix"></a>
+            <div class="b-sample-item"><a href="/item.html" class="b-sample-item__pixwrap">
+                <div class="b-sample-item__link">Просмотр</div><img src="images/sample-1.png" class="b-sample-item__pix"></a>
               <div class="b-sample-item__text"><a href="/item.html" class="b-sample-item__collect">Brightwater</a>
                 <div class="b-sample-item__name">Dsert</div>
               </div>
@@ -315,7 +323,6 @@
           </div>
         </div>
       </div>
-      <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;onload=initMap" type="text/javascript"></script>
     </footer>
   </body>
 </html>

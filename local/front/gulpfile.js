@@ -7,7 +7,11 @@ var
     imagemin = require('gulp-imagemin'), // Минификация изображений
     uglify = require('gulp-uglify'), // Минификация JS
     concat = require('gulp-concat'); // Склейка файлов
+require("babel-polyfill");
 const babel = require('gulp-babel');
+const webpack = require('webpack-stream');
+require("babel-core/register");
+
 //var imageResize = require('gulp-image-resize');
 var autoprefixer = require('gulp-autoprefixer');
 // Собираем Stylus
@@ -137,12 +141,19 @@ gulp.task('build', function () {
 // js
 
     ;
-    gulp.src(['./assets/js/*.js'])
-    //  .pipe(concat('site.js')) // Собираем все JS, кроме тех которые находятся в ./assets/js/vendor/**
-        .pipe(babel({presets: ['env']}))
-        .pipe(gulp.dest('../back/assets/js'))
+    gulp.src(['./assets/js/site.js'])
+     //   .pipe(babel({presets: ["es2015", "stage-0"]}))
+        .pipe(webpack({
+            entry: ['babel-polyfill', './assets/js/site.js'],
+
+            output: {
+                filename: 'bundle.js'
+            }
+        }))
+        .pipe(concat('site.js')) // Собираем все JS, кроме тех которые находятся в ./assets/js/vendor/**
+        .pipe(gulp.dest('../back/assets/js'));
     gulp.src(['./public/js/vendor/*.js'])
-        .pipe(gulp.dest('../back/assets/js/vendor'))
+        .pipe(gulp.dest('../back/assets/js/vendor'));
 
 
 // image
