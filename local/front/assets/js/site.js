@@ -253,13 +253,19 @@ const ItemSlider = (
         const setSlider = function () {
             this.init = () => {
                 this.slider = $('.i-topslider').slick(this.config().top);
+                $('.i-topslider').on('afterChange',(e,s,d)=>{
+                    let cs = s.currentSlide;
+                    $('.i-topslider__cont').removeClass('active');
+                    $(this.list[cs].item).addClass('active');
 
+                })
                 this.controller();
             }
             this.controller = () => {
+                this.list = [];
                 $('.i-topslider__controlls').find('.i-topslider__cont').each((index, item) => {
 
-                    new ControlConstructor(item, index, this.slider);
+                    this.list.push(new ControlConstructor(item, index, this.slider));
                 })
             }
             const ControlConstructor = function (item, index, slider) {

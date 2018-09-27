@@ -1970,7 +1970,8 @@ body {
     position: relative;
   }
   &__pixwrap {
-    position: relative
+    position: relative;
+    transition: .3s;
   }
   &__pixwrap:after {
     width: 100%;
@@ -1985,6 +1986,7 @@ body {
     content: '';
 
   }
+  .active &__pixwrap{box-shadow:  0 0 0 3px #c38817;}
   &__item:active &__pixwrap:after {
     opacity: .25;
   }

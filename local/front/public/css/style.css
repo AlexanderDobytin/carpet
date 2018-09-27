@@ -1746,6 +1746,7 @@ body {
 }
 .b-subslider__pixwrap {
   position: relative;
+  transition: .3s;
 }
 .b-subslider__pixwrap:after {
   width: 100%;
@@ -1758,6 +1759,9 @@ body {
   top: 0px;
   position: absolute;
   content: '';
+}
+.active .b-subslider__pixwrap {
+  box-shadow: 0 0 0 3px #c38817;
 }
 .b-subslider__item:active .b-subslider__pixwrap:after {
   opacity: .25;
