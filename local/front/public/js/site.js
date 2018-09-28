@@ -44,7 +44,7 @@ const Sample = (function (items) {
                         }
                     },
                     {
-                        breakpoint: 800,
+                        breakpoint: 992,
                         settings: {
                             slidesToShow: 4,
                             slidesToScroll: 1,
@@ -80,7 +80,7 @@ const Sample = (function (items) {
                         }
                     },
                     {
-                        breakpoint: 800,
+                        breakpoint: 992,
                         settings: {
                             slidesToShow: 4,
                             slidesToScroll: 1,
