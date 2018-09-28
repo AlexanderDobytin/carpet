@@ -325,7 +325,7 @@ const Tabs = (function () {
 
             this.link.on('click', (e) => {
                 this.onClickInLink(e);
-            })
+            });
             this.action();
         },
             this.onClickInLink = (e) => {
@@ -336,11 +336,14 @@ const Tabs = (function () {
                 this.action();
             }
         this.action = () => {
-            this.list.each((item) => {
+            $(this.link).removeClass('active');
+            this.list.each((item,link) => {
 
                 if (this.list[item].dataset.id === this.state) {
+                    $('[data-id ="'+this.state+'" ]').addClass('active');
                     $(this.list[item]).addClass('active');
                 } else {
+
                     $(this.list[item]).removeClass('active');
                 }
             })

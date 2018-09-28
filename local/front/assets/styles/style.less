@@ -286,7 +286,7 @@ body {
   }
   &__item.show + &__list {
     display: block;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.25);
   }
 }
 
@@ -296,13 +296,13 @@ body {
     flex: 1 0 auto;
     height: 60px;
     display: flex;
-    border-bottom: 1px solid #000000;
+    border-bottom: 1px solid #fff;
     align-items: center;
   }
   &__element:after {
     height: 40px;
     width: 1px;
-    background: black;
+    background: #fff;
     display: none;
     content: '';
   }
@@ -320,6 +320,7 @@ body {
   }
 
   &__icon:hover:before {
+    border-color: #fff;
   }
   &__icon.active:before {
     transform: rotate(45deg);
@@ -350,8 +351,9 @@ body {
     font-size: 18px;
     text-align: left;
     line-height: 60px;
-    color: #000;
+    color: #fff;
     font-weight: 300;
+    background-color: #c4c4c4;
     position: relative;
   }
 
@@ -644,7 +646,7 @@ body {
       position: absolute;
 
       width: ~'calc(100% + 3px)';
-      border: 1px solid;
+      border: 1px solid #fff;
       margin-left: -3px;
     }
     &__icon {
@@ -833,7 +835,7 @@ body {
 
 .b-index-more {
   & {
-    padding: 10px 0;
+    padding: 17px 0;
     text-align: center;
     border-bottom: 1px solid #000;
     display: flex;
@@ -1056,7 +1058,7 @@ body {
 .b-sample {
   & {
     padding-bottom: 20px;
-    border-bottom: 1px solid #000
+    //border-bottom: 1px solid #000
   }
   &__list {
     margin-left: -10px;
@@ -1189,11 +1191,15 @@ body {
     left: 0px;
     width: 100%;
     background: rgba(0, 0, 0, .25);
-    color: #fff;
     transform: translateY(100%);
+    color: #fff;
+    text-transform: uppercase;
   }
   &__pixwrap:hover &__link {
     transform: translateY(0%);
+  }
+  &__pixwrap:active &__link {
+    transform: translateY(100%);
   }
   & {
     padding: 0 10px;
@@ -1208,13 +1214,28 @@ body {
   }
   &__text {
     display: flex;
-    justify-content: space-between;;
+    justify-content: flex-start;
     align-items: center;
     padding: 10px 0px;
     font-size: 14px;
   }
   &__collect {
+    position: relative;
+    display: block;
     font-weight: 700;
+    padding-right: 10px;
+  }
+  &__collect:after {
+    content: '';
+    display: block;
+    width: 2px;
+    height: 2px;
+    border-radius: 50px;
+    background-color: #000;
+    position: absolute;
+    margin-top: -1px;
+    top: 50%;
+    right: 3px;
   }
   &__pixwrap {
     position: relative;
@@ -1263,7 +1284,7 @@ body {
   }
   &__link:hover {
     color: #000;
-    text-shadow: 0 0 1px #000;
+    //  text-shadow: 0 0 1px #000;
     text-decoration: none;
   }
 
@@ -1496,16 +1517,7 @@ body {
     margin-bottom: 30px;
     position: relative
   }
-  &__flexwrap:before {
-    width: 50%;
-    left: -40%;
-    top: ~'calc(100% - 1px)';
-    position: absolute;
-    display: block;
-    height: 1px;
-    background-color: #000;
-    content: '';
-  }
+
   &__item {
     text-transform: uppercase;
 
@@ -1514,6 +1526,7 @@ body {
     text-decoration: none;
   }
   &__seporator {
+    margin: 0 13px;
     margin: 0 13px;
   }
   a.b-breadcrumbs__item {
@@ -1630,7 +1643,8 @@ body {
     align-items: flex-start;
     justify-content: space-between;
     // height: 170px;
-    margin-bottom: 30px;
+    flex-direction: row-reverse;
+    margin-bottom: 20px;
   }
   &__item {
     width: 28%;
@@ -1638,18 +1652,22 @@ body {
     margin-left: -6%;
     //  max-height: 120px;
   }
-
-  &__item--1 {
-    align-self: flex-end;
-    margin-top: 40px
-  }
-  &__item--3 {
+  &__item--2 {
     align-self: flex-end;
 
-    margin-top: 40px
+    margin-top: 30px;
   }
   &__item--4 {
+    margin-top: 30px;
+    align-self: flex-end;
+  }
+  &__item--3 {
+
+  }
+  &__item--1 {
+
     margin-left: 0px !important;
+
   }
 }
 
@@ -1721,7 +1739,7 @@ body {
   }
 
   .b-catalog-image {
-    padding-top: 20px;
+    margin-top: 20px;
   }
 
   .b-catalog-minicat {
@@ -1806,6 +1824,7 @@ body {
   &__pixwar {
     width: 100%;
     position: relative;
+
     overflow: hidden;
   }
   &__pixwar:hover &__link {
@@ -1834,6 +1853,8 @@ body {
   &__pix {
     width: 100%;
     margin: auto;
+    min-height: 180px;
+    object-fit: cover;
   }
   &__footer {
     display: flex;
@@ -1910,24 +1931,39 @@ body {
   }
 }
 
+@media (min-width: 576px) {
+  .b-subcat-list {
+    &__pix {
+      min-height: 240px
+    }
+  }
+}
+
 @media (min-width: 768px) {
   .b-subcat-tab {
     &__list {
       flex-direction: row;
       margin-bottom: 30px;
     }
-    &__item {
-      flex-direction: column
-    }
   }
 
-  .b-morecollection {
-    &__link {
-      text-align: center;
-      font-size: 42px;
-    }
-
+  &__item {
+    flex-direction: column
   }
+}
+
+.b-subcat-list {
+  &__pix {
+    min-height: 270px
+  }
+}
+
+.b-morecollection {
+  &__link {
+    text-align: center;
+    font-size: 42px;
+  }
+
 }
 
 @media (min-width: 992px) {
@@ -1972,6 +2008,25 @@ body {
   &__pixwrap {
     position: relative;
     transition: .3s;
+    overflow: hidden;
+  }
+  &__pixwrap:before {
+    width: 100%;
+    transition: .3s;
+    content: '';
+    position: absolute;
+    display: block;
+    height: 40%;
+    left: 0px;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, .25);
+    transform: translateY(100%);
+  }
+  &__pixwrap:hover:before {
+    transform: translateY(0%);
+  }
+  &__pixwrap:active:before {
+    transform: translateY(100%);
   }
   &__pixwrap:after {
     width: 100%;
@@ -1986,12 +2041,23 @@ body {
     content: '';
 
   }
-  .active &__pixwrap{box-shadow:  0 0 0 3px #c38817;}
+  .active &__pixwrap {
+    box-shadow: 0 0 0 3px #c38817;
+  }
   &__item:active &__pixwrap:after {
     opacity: .25;
   }
   &__pix {
     width: 100%;
+  }
+}
+
+.b-item-flexcont {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__item {
+    margin-bottom: 10px;
   }
 }
 
@@ -2004,7 +2070,7 @@ body {
     padding-top: 40px
   }
   &__item {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     background-color: #fff;
   }
   &__title {
@@ -2133,7 +2199,7 @@ body {
     margin-bottom: 20px;
   }
   &__tab {
-    color: #000;
+    color: #c4c4c4;
     text-decoration: none;
     font-size: 22px;
     transition: .3s;
@@ -2143,7 +2209,7 @@ body {
   }
   &__tab:active, &__tab:hover, &__tab.active {
     text-decoration: none;
-    color: #c38817;
+    color: #000;
   }
   &__item {
     display: none;
@@ -2184,7 +2250,7 @@ body {
 
 .b-place {
   & {
-    line-height: 1.5;
+    line-height: 2;
     margin-bottom: 30px;
   }
   &__phone {
@@ -2209,12 +2275,19 @@ body {
   }
   &__social {
     display: flex;
-    margin-top: 20px;
+    margin-top: 30px;
   }
 }
 
 .b-map {
   height: 180px;
+}
+
+.b-contact {
+  &-item {
+    border-bottom: 1px solid;
+    margin-bottom: 20px;
+  }
 }
 
 .b-contact-form {
@@ -2234,6 +2307,7 @@ body {
     border: none;
     transition: .3s;
     outline: none !important;
+    min-height: 65px;
     color: #000;
     border-bottom: 1px solid;
   }
@@ -2263,6 +2337,24 @@ body {
     ///  background: #fff;
     width: 100%;
   }
+  &__submit {
+    padding: 10px 0;
+    border: none;
+    text-align: center;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    display: flex;
+    transition: .3s;
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    ///  background: #fff;
+    width: 100%;
+  }
+
   &__arrow {
     margin-left: 10px;
     transform: rotate(90deg);
@@ -2272,6 +2364,16 @@ body {
     background-color: #c4c4c4;
     color: #fff;
     border-color: #c4c4c4;
+  }
+  &__submit:hover {
+    background-color: #c4c4c4;
+    color: #fff;
+    border-color: #c4c4c4;
+  }
+  &__submit:active {
+    background-color: #c38817;
+    color: #fff;
+    border-color: #c38817;
   }
   &__button path {
     transition: .3s
@@ -2284,6 +2386,8 @@ body {
 .b-form-file {
   & {
     width: 100%;
+
+    margin-top: 20px;
   }
   &__input {
     display: none;
@@ -2376,7 +2480,7 @@ body {
     }
 
     &__sepor {
-      margin-right: 20px;
+      margin-right: 10px;
     }
     &__list {
       border-top: 1px solid;
@@ -2384,8 +2488,8 @@ body {
     }
     &__tab {;
       width: auto;
-      margin-right: 30px;
-      font-size: 18px
+      margin-right: 10px;
+      font-size: 16px
     }
     &__tab span {
       padding-right: 20px;

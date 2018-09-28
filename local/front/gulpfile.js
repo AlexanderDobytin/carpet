@@ -145,14 +145,13 @@ gulp.task('build', function () {
      //   .pipe(babel({presets: ["es2015", "stage-0"]}))
         .pipe(webpack({
             entry: ['babel-polyfill', './assets/js/site.js'],
-
             output: {
                 filename: 'bundle.js'
             }
         }))
         .pipe(concat('site.js')) // Собираем все JS, кроме тех которые находятся в ./assets/js/vendor/**
         .pipe(gulp.dest('../back/assets/js'));
-    gulp.src(['./public/js/vendor/*.js'])
+        gulp.src(['./public/js/vendor/*.js'])
         .pipe(gulp.dest('../back/assets/js/vendor'));
 
 

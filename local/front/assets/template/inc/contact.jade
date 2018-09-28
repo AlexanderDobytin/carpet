@@ -1,16 +1,21 @@
 include breadcrumbs.jade
-+breadcrumbs(['Контакты'])
 .container
 	h1 Контакты
 	.b-contact-item
 		.b-contact-item__adres.b-contact-adres.i-tabs(data-default = 'central').row
-			.b-contact-adres__header.col-12
+			//-.b-contact-adres__header.col-12
 				a(href='' data-id= 'central').b-contact-adres__tab.i-tabs__link ГЛАВНЫЙ ОФИС
 				.d-none.d-lg-block.b-contact-adres__sepor  /
 				a(href='' data-id= "diller" ).b-contact-adres__tab.i-tabs__link
 					span.d-none.d-sm-block ДИЛЛЕРСКАЯ СЕТЬ
 					span.d-sm-none ДИЛЛЕРЫ 
 			.col-12.col-lg-4
+				.b-contact-adres__header
+					a(href='' data-id= 'central').b-contact-adres__tab.i-tabs__link ГЛАВНЫЙ ОФИС
+					.d-none.d-lg-block.b-contact-adres__sepor  /
+					a(href='' data-id= "diller" ).b-contact-adres__tab.i-tabs__link
+						span.d-none.d-sm-block ДИЛЛЕРСКАЯ СЕТЬ
+						span.d-sm-none ДИЛЛЕРЫ 
 				.b-contact-adres__list
 					.b-contact-adres__item(data-id = 'central').i-tabs__list
 						.b-city__place.b-place
