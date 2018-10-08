@@ -453,6 +453,9 @@ body {
 .b-navbar__item:hover .b-navbar-list__icon:before {
   border-width: 2px;
 }
+.b-navbar__item:active .b-navbar-list__icon:before {
+  border-color: #fff;
+}
 .b-navbar-icon {
   height: 16px;
   width: 22px;
@@ -2347,7 +2350,7 @@ body {
 }
 @media (min-width: 992px) {
   .b-back,
-  b-up {
+  .b-up {
     display: flex;
   }
 }

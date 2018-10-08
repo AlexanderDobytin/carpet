@@ -6,14 +6,15 @@
     <title>Union</title>
     <link rel="stylesheet" href="css/vendor/vendor.css">
     <link rel="stylesheet" href="css/style.css">
-    <!--link(rel="stylesheet", type="text/css", href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css")-->
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <script type="text/javascript" src="js/vendor/vendor.js"></script>
     <script type="text/javascript" src="js/site.js"></script>
   </head>
   <body>
     <header class="b-header">
-      <div class="b-header__topline"><a href="/" class="b-header-logo b-header__logo"><img src="images/LOGO.svg" class="b-header-logo__pix"></a></div>
+      <div class="b-header__topline">
+        <div class="container"><a href="/" class="b-header-logo b-header__logo"><img src="images/LOGO.png" class="b-header-logo__pix"></a></div>
+      </div>
       <div class="b-header__wrapline i-fixed__wrapper">
         <div class="b-header__fixed i-fixed">
           <div class="b-header__seclogo"><a href=""><img src="images/logo-fix.png" class="b-header__seclogopix"></a></div>
@@ -25,18 +26,18 @@
                 </div>
                 <div class="b-navbar__wrapper i-navbar__list">
                   <navbar class="b-navbar">
-                    <div class="b-navbar__item"><a href="/" class="b-navbar__link"> <span>Главная</span></a></div>
+                    <div class="b-navbar__item"><a href="/" class="b-navbar__link"> <span title="Главная">Главная</span></a></div>
                     <div class="b-navbar__cut">
-                      <div class="b-navbar__item b-navbar__item--list i-navSpoil"><a href="/catalog.html" class="b-navbar__link"><span> Каталоги</span></a>
+                      <div class="b-navbar__item b-navbar__item--list i-navSpoil"><a href="/catalog.html" class="b-navbar__link i-navSpoil__icon"><span title="Каталоги"> Каталоги</span></a>
                         <div class="b-navbar-list__icon i-navSpoil__icon"></div>
                       </div>
                       <div class="b-navbar__list b-navbar-list i-navSpoil__list">
-                        <div class="b-navbar-list__element"><a href="/catalog.html" class="b-navbar-list__link"><span> Каталог !</span></a></div>
-                        <div class="b-navbar-list__element"><a href="/catalog.html" class="b-navbar-list__link"><span>Каталог !!!</span></a></div>
+                        <div class="b-navbar-list__element"><a href="/catalog.html" class="b-navbar-list__link"><span title="Каталог !"> Каталог !</span></a></div>
+                        <div class="b-navbar-list__element"><a href="/catalog.html" class="b-navbar-list__link"><span title="Каталог !!!">Каталог !!!</span></a></div>
                       </div>
                     </div>
-                    <div class="b-navbar__item"><a href="/partnership.html" class="b-navbar__link"><span>Сотрудничество</span></a></div>
-                    <div class="b-navbar__item"><a href="/aboutUs.html" class="b-navbar__link"><span>О нас</span></a></div>
+                    <div class="b-navbar__item"><a href="/partnership.html" class="b-navbar__link"><span title="Сотрудничество">Сотрудничество</span></a></div>
+                    <div class="b-navbar__item"><a href="/aboutUs.html" class="b-navbar__link"><span title="О нас">О нас</span></a></div>
                   </navbar>
                   <div class="b-multitool d-sm-none"><a href="" class="b-multitool__favorites b-multitool-favorites b-multitool__item">
                       <svg width="23" height="21" viewbox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -233,7 +234,7 @@
           </svg>
         </div>
         <div class="b-sample i-sample">
-          <h2>Образцы недели</h2>
+          <h2>ОБРАЗЦЫ НЕДЕЛИ</h2>
           <div class="b-sample__list i-sample__list">
             <div class="b-sample-item"><a href="/item.html" class="b-sample-item__pixwrap">
                 <div class="b-sample-item__link">Просмотр</div><img src="images/sample-1.png" class="b-sample-item__pix"></a>

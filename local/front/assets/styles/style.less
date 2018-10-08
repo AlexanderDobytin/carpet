@@ -417,7 +417,6 @@ body {
     opacity: 0;
     background: #C38817;
     transition: .3s;
-
     position: absolute;
     left: 0px;
     top: 100%;
@@ -434,6 +433,9 @@ body {
 
 .b-navbar__item:hover .b-navbar-list__icon:before {
   border-width: 2px;
+}
+.b-navbar__item:active .b-navbar-list__icon:before {
+  border-color: #fff;
 }
 
 .b-navbar-icon {
@@ -2676,7 +2678,7 @@ body {
 }
 
 @media (min-width: 992px) {
-  .b-back, b-up {
+  .b-back, .b-up {
     display: flex;
   }
 
