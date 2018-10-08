@@ -257,7 +257,7 @@ const ItemSlider = (
         const setSlider = function () {
             this.init = () => {
                 this.slider = $('.i-topslider').slick(this.config().top);
-                $('.i-topslider').on('afterChange',(e,s,d)=>{
+                $('.i-topslider').on('afterChange', (e, s, d) => {
                     let cs = s.currentSlide;
                     $('.i-topslider__cont').removeClass('active');
                     $(this.list[cs].item).addClass('active');
@@ -337,10 +337,10 @@ const Tabs = (function () {
             }
         this.action = () => {
             $(this.link).removeClass('active');
-            this.list.each((item,link) => {
+            this.list.each((item, link) => {
 
                 if (this.list[item].dataset.id === this.state) {
-                    $('[data-id ="'+this.state+'" ]').addClass('active');
+                    $('[data-id ="' + this.state + '" ]').addClass('active');
                     $(this.list[item]).addClass('active');
                 } else {
 
@@ -426,7 +426,7 @@ const Map = (function (ymaps) {
             let city;
             /*если кликаем на город, мутим экшн*/
             $('.i-adres__link').on('click', (e) => {
-                this.clickToCity(e)
+                this.clickToCity(e);
             })
         }
         this.clickToCity = async (e) => {
@@ -556,7 +556,49 @@ const CatSpoiler = (function () {
         },
         list: []
     }
-})()
+})();
+const navHelpers = (function () {
+    const Goback = function () {
+        this.init = ()=>{
+            $('body').append(this.template());
+            $('#goup').on('click',()=>{
+                $('html,body').animate({'scrollTop':0},300);
+            })
+        }
+        this.template = ()=>{
+            return (`<div class='b-up' id="goup">
+                    
+                    <svg width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M1 11L11 1L21 11" stroke="white"/>
+                        </svg>
+                    </div>`)
+        }
+        this.init()
+    }
+    const Goup = function () {
+        this.init = ()=>{
+            $('body').append(this.template());
+            $('#goback').on('click',()=>{
+                history.back();
+            })
+        }
+        this.template = ()=>{
+            return (`<div class='b-back' id="goback">
+                       <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M11 21L1 11L11 1" stroke="white"/>
+                    </svg>
+                    </div>`)
+        }
+        this.init()
+    }
+    return {
+        init: function () {
+        this.back  = new Goback();
+        this.up =  new Goup();
+        }
+    }
+})();
+
 $(document).ready(function () {
     CatSpoiler.init();
     /*
@@ -573,9 +615,9 @@ $(document).ready(function () {
     Menu.init();
     /*Галерейка образцов*/
     Sample.init($('.i-sample__list'));
-   ymaps.ready(()=>{
-       initMap(ymaps)
-   })
-
+    ymaps.ready(() => {
+        initMap(ymaps)
+    })
+    navHelpers.init();
 })
 

@@ -3,7 +3,7 @@ header.b-header
 	.b-header__topline
 		.container
 			a(href="/").b-header-logo.b-header__logo
-				img(src="images/LOGO.svg").b-header-logo__pix
+				img(src="images/LOGO.png").b-header-logo__pix
 	.b-header__wrapline.i-fixed__wrapper
 		.b-header__fixed.i-fixed
 			.b-header__seclogo
@@ -18,25 +18,25 @@ header.b-header
 							navbar.b-navbar
 								.b-navbar__item
 									a(href="/").b-navbar__link 
-										span Главная
+										span(title="Главная") Главная
 								.b-navbar__cut
 									.b-navbar__item.b-navbar__item--list.i-navSpoil
-										a(href="/catalog.html").b-navbar__link
-											span  Каталоги
+										a(href="/catalog.html").b-navbar__link.i-navSpoil__icon
+											span(title="Каталоги")  Каталоги
 										.b-navbar-list__icon.i-navSpoil__icon
 									.b-navbar__list.b-navbar-list.i-navSpoil__list
 										.b-navbar-list__element
 											a(href="/catalog.html").b-navbar-list__link
-												span  Каталог !
+												span(title="Каталог !")  Каталог !
 										.b-navbar-list__element
 											a(href="/catalog.html").b-navbar-list__link
-												span Каталог !!!
+												span(title="Каталог !!!") Каталог !!!
 								.b-navbar__item
 									a(href="/partnership.html").b-navbar__link
-										span Сотрудничество
+										span(title="Сотрудничество") Сотрудничество
 								.b-navbar__item
 									a(href="/aboutUs.html").b-navbar__link
-										span О нас
+										span(title="О нас") О нас
 							.b-multitool.d-sm-none
 								a(href="").b-multitool__favorites.b-multitool-favorites.b-multitool__item
 									svg(width='23', height='21', viewbox='0 0 18 17', fill='none', xmlns='http://www.w3.org/2000/svg')

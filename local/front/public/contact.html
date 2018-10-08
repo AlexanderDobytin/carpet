@@ -13,7 +13,7 @@
   <body>
     <header class="b-header">
       <div class="b-header__topline">
-        <div class="container"><a href="/" class="b-header-logo b-header__logo"><img src="images/LOGO.svg" class="b-header-logo__pix"></a></div>
+        <div class="container"><a href="/" class="b-header-logo b-header__logo"><img src="images/LOGO.png" class="b-header-logo__pix"></a></div>
       </div>
       <div class="b-header__wrapline i-fixed__wrapper">
         <div class="b-header__fixed i-fixed">
@@ -26,18 +26,18 @@
                 </div>
                 <div class="b-navbar__wrapper i-navbar__list">
                   <navbar class="b-navbar">
-                    <div class="b-navbar__item"><a href="/" class="b-navbar__link"> <span>Главная</span></a></div>
+                    <div class="b-navbar__item"><a href="/" class="b-navbar__link"> <span title="Главная">Главная</span></a></div>
                     <div class="b-navbar__cut">
-                      <div class="b-navbar__item b-navbar__item--list i-navSpoil"><a href="/catalog.html" class="b-navbar__link"><span> Каталоги</span></a>
+                      <div class="b-navbar__item b-navbar__item--list i-navSpoil"><a href="/catalog.html" class="b-navbar__link i-navSpoil__icon"><span title="Каталоги"> Каталоги</span></a>
                         <div class="b-navbar-list__icon i-navSpoil__icon"></div>
                       </div>
                       <div class="b-navbar__list b-navbar-list i-navSpoil__list">
-                        <div class="b-navbar-list__element"><a href="/catalog.html" class="b-navbar-list__link"><span> Каталог !</span></a></div>
-                        <div class="b-navbar-list__element"><a href="/catalog.html" class="b-navbar-list__link"><span>Каталог !!!</span></a></div>
+                        <div class="b-navbar-list__element"><a href="/catalog.html" class="b-navbar-list__link"><span title="Каталог !"> Каталог !</span></a></div>
+                        <div class="b-navbar-list__element"><a href="/catalog.html" class="b-navbar-list__link"><span title="Каталог !!!">Каталог !!!</span></a></div>
                       </div>
                     </div>
-                    <div class="b-navbar__item"><a href="/partnership.html" class="b-navbar__link"><span>Сотрудничество</span></a></div>
-                    <div class="b-navbar__item"><a href="/aboutUs.html" class="b-navbar__link"><span>О нас</span></a></div>
+                    <div class="b-navbar__item"><a href="/partnership.html" class="b-navbar__link"><span title="Сотрудничество">Сотрудничество</span></a></div>
+                    <div class="b-navbar__item"><a href="/aboutUs.html" class="b-navbar__link"><span title="О нас">О нас</span></a></div>
                   </navbar>
                   <div class="b-multitool d-sm-none"><a href="" class="b-multitool__favorites b-multitool-favorites b-multitool__item">
                       <svg width="23" height="21" viewbox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -356,10 +356,10 @@
         <h2 class="b-contact-form__title">Расскажите нам о своем проекте</h2>
         <form class="b-contact-form__form row">
           <div class="b-contact-form__line col-12 col-sm-6">
-            <input type="text" name="name" placeholder="Имя" class="b-contact-form__input">
+            <input type="text" required name="name" placeholder="Имя" class="b-contact-form__input">
           </div>
           <div class="b-contact-form__line col-12 col-sm-6">
-            <input type="text" name="email" placeholder="Email" class="b-contact-form__input">
+            <input type="email" name="email" placeholder="Email" class="b-contact-form__input">
           </div>
           <div class="b-contact-form__line col-12 col-sm-6">
             <input type="text" name="company" placeholder="Компания" class="b-contact-form__input">
